@@ -89,7 +89,7 @@ namespace M3u8VideoDownloader
                     else
                     {
                         fileName = isValidUrl ? Path.GetFileNameWithoutExtension(new Uri(url).LocalPath) : (File.Exists(url) ? Path.GetFileNameWithoutExtension(url) : order.ToString());
-                    } 
+                    }
 
                     this.dataGridView1.Rows.Add(order, fileName, url, isValidUrl ? "Play" : "");
                 }
@@ -198,7 +198,7 @@ namespace M3u8VideoDownloader
 
         private void InitControls()
         {
-            if(!string.IsNullOrEmpty(this.setting.SaveFolder))
+            if (!string.IsNullOrEmpty(this.setting.SaveFolder))
             {
                 this.txtSaveFolder.Text = this.setting.SaveFolder;
             }
@@ -227,21 +227,40 @@ namespace M3u8VideoDownloader
 
         private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(this.dataGridView1.SelectedRows!=null)
+            if (this.dataGridView1.SelectedRows != null)
             {
                 List<int> indexes = new List<int>();
-                foreach(DataGridViewRow row in this.dataGridView1.SelectedRows)
+                foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
                 {
                     indexes.Add(row.Index);
                 }
                 indexes.Reverse();
-                indexes.ForEach(item => this.dataGridView1.Rows.RemoveAt(item));               
+                indexes.ForEach(item => this.dataGridView1.Rows.RemoveAt(item));
             }
         }
 
         private void clearRowsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.dataGridView1.Rows.Clear();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var downloader = DownloadManager.Downloder;
+            if (downloader != null && !downloader.IsDisposed && downloader.IsBusy)
+            {
+                DialogResult result = MessageBox.Show("There is running task, are you sure to exit?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                    downloader.Cancel();
+                    downloader.Clear();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

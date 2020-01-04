@@ -31,13 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Play = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.txtSaveFolder = new System.Windows.Forms.TextBox();
@@ -51,10 +55,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearRowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Play = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -81,7 +81,7 @@
             // tsmSetting
             // 
             this.tsmSetting.Name = "tsmSetting";
-            this.tsmSetting.Size = new System.Drawing.Size(180, 22);
+            this.tsmSetting.Size = new System.Drawing.Size(116, 22);
             this.tsmSetting.Text = "Setting";
             this.tsmSetting.Click += new System.EventHandler(this.tsmSetting_Click);
             // 
@@ -122,6 +122,44 @@
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // Order
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Order.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Order.Frozen = true;
+            this.Order.HeaderText = "NO.";
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Width = 40;
+            // 
+            // _Name
+            // 
+            this._Name.DataPropertyName = "Name";
+            this._Name.Frozen = true;
+            this._Name.HeaderText = "Name";
+            this._Name.Name = "_Name";
+            this._Name.Width = 200;
+            // 
+            // Url
+            // 
+            this.Url.DataPropertyName = "Url";
+            this.Url.HeaderText = "Url";
+            this.Url.Name = "Url";
+            this.Url.Width = 500;
+            // 
+            // Play
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.Play.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Play.HeaderText = "Play";
+            this.Play.Name = "Play";
+            this.Play.ReadOnly = true;
+            this.Play.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Play.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Play.Width = 40;
             // 
             // btnSelectFile
             // 
@@ -227,44 +265,6 @@
             this.clearRowsToolStripMenuItem.Text = "Clear all rows";
             this.clearRowsToolStripMenuItem.Click += new System.EventHandler(this.clearRowsToolStripMenuItem_Click);
             // 
-            // Order
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Order.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Order.Frozen = true;
-            this.Order.HeaderText = "NO.";
-            this.Order.Name = "Order";
-            this.Order.ReadOnly = true;
-            this.Order.Width = 40;
-            // 
-            // _Name
-            // 
-            this._Name.DataPropertyName = "Name";
-            this._Name.Frozen = true;
-            this._Name.HeaderText = "Name";
-            this._Name.Name = "_Name";
-            this._Name.Width = 200;
-            // 
-            // Url
-            // 
-            this.Url.DataPropertyName = "Url";
-            this.Url.HeaderText = "Url";
-            this.Url.Name = "Url";
-            this.Url.Width = 500;
-            // 
-            // Play
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.Play.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Play.HeaderText = "Play";
-            this.Play.Name = "Play";
-            this.Play.ReadOnly = true;
-            this.Play.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Play.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Play.Width = 40;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -283,6 +283,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "m3u8 video downloader";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.menuStrip1.ResumeLayout(false);

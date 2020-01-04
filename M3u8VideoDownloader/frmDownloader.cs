@@ -222,7 +222,7 @@ namespace M3u8VideoDownloader
             }
         }
 
-        private void Clear()
+        public void Clear()
         {
             this.VideoInfos.Clear();
             this.Downloaders.Clear();
