@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class M3u8Writer
     {

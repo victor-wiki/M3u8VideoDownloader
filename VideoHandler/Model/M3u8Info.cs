@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class M3u8Info
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VideoHandler;
+using M3u8VideoHandler;
 
 namespace M3u8VideoDownloader
 {

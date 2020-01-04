@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class M3u8Helper
     {

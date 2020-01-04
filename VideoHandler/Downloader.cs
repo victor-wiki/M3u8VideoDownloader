@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class Downloader
     {

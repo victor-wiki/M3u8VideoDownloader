@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using M3u8VideoHandler;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using VideoHandler;
 
 namespace M3u8VideoDownloader
 {

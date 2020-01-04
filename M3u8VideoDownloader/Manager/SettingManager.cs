@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using VideoHandler;
-using System.IO;
+﻿using M3u8VideoHandler;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace M3u8VideoDownloader
 {

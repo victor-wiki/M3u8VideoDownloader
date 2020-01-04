@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class LogHelper
     {

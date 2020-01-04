@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 
-namespace VideoHandler
+namespace M3u8VideoHandler
 {
     public class M3u8ContentParser
     {

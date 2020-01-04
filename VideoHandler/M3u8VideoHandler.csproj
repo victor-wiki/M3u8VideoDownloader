@@ -7,8 +7,8 @@
     <ProjectGuid>{D8AD78AF-E0F9-44D2-97B7-4B4A5B55CBD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VideoHandler</RootNamespace>
-    <AssemblyName>VideoHandler</AssemblyName>
+    <RootNamespace>M3u8VideoHandler</RootNamespace>
+    <AssemblyName>M3u8VideoHandler</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
