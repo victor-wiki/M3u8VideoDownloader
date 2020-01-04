@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3u8VideoDownloader", "M3u8VideoDownloader\M3u8VideoDownloader.csproj", "{CFCA0B69-86AD-414E-AD85-F38CD4EB27F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3u8VideoHandler", "VideoHandler\M3u8VideoHandler.csproj", "{D8AD78AF-E0F9-44D2-97B7-4B4A5B55CBD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3u8VideoHandler", "M3u8VideoHandler\M3u8VideoHandler.csproj", "{D8AD78AF-E0F9-44D2-97B7-4B4A5B55CBD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -140,12 +140,6 @@
     <None Include="Resources\setting.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VideoHandler\M3u8VideoHandler.csproj">
-      <Project>{d8ad78af-e0f9-44d2-97b7-4b4a5b55cbd4}</Project>
-      <Name>M3u8VideoHandler</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\download.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +149,12 @@
     <Content Include="Resources\folder.png" />
     <Content Include="screenshort1.png" />
     <Content Include="screenshort2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\M3u8VideoHandler\M3u8VideoHandler.csproj">
+      <Project>{d8ad78af-e0f9-44d2-97b7-4b4a5b55cbd4}</Project>
+      <Name>M3u8VideoHandler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
