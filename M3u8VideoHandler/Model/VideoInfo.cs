@@ -9,6 +9,8 @@
         public DownloadTaskState TaskState { get; set; }
 
         public int TsFileCount { get; set; }    
+
+        public string LocalPath { get; set; }
         
         public M3u8Info M3u8Info { get; set; }
     }

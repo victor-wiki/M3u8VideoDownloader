@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDownloader));
             this.lvMessage = new System.Windows.Forms.ListView();
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chkShutdownAfterDownload = new System.Windows.Forms.CheckBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiPlay = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpenExplorer = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvMessage
@@ -54,6 +59,8 @@
             this.lvMessage.TabIndex = 17;
             this.lvMessage.UseCompatibleStateImageBehavior = false;
             this.lvMessage.View = System.Windows.Forms.View.Details;
+            this.lvMessage.DoubleClick += new System.EventHandler(this.lvMessage_DoubleClick);
+            this.lvMessage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvMessage_MouseClick);
             // 
             // colName
             // 
@@ -81,6 +88,28 @@
             this.chkShutdownAfterDownload.Text = "Shutdown PC if done";
             this.chkShutdownAfterDownload.UseVisualStyleBackColor = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPlay,
+            this.tsmiOpenExplorer});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 48);
+            // 
+            // tsmiPlay
+            // 
+            this.tsmiPlay.Name = "tsmiPlay";
+            this.tsmiPlay.Size = new System.Drawing.Size(175, 22);
+            this.tsmiPlay.Text = "Play";
+            this.tsmiPlay.Click += new System.EventHandler(this.tsmiPlay_Click);
+            // 
+            // tsmiOpenExplorer
+            // 
+            this.tsmiOpenExplorer.Name = "tsmiOpenExplorer";
+            this.tsmiOpenExplorer.Size = new System.Drawing.Size(175, 22);
+            this.tsmiOpenExplorer.Text = "Open in explorer";
+            this.tsmiOpenExplorer.Click += new System.EventHandler(this.tsmiOpenExplorer_Click);
+            // 
             // frmDownloader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -95,6 +124,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDownloader_FormClosing);
             this.Load += new System.EventHandler(this.frmDownloader_Load);
             this.SizeChanged += new System.EventHandler(this.frmDownloader_SizeChanged);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +137,8 @@
         private System.Windows.Forms.ColumnHeader colMessage;
         private System.Windows.Forms.ColumnHeader colStartTime;
         private System.Windows.Forms.CheckBox chkShutdownAfterDownload;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPlay;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpenExplorer;
     }
 }

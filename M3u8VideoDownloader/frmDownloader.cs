@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -239,6 +240,60 @@ namespace M3u8VideoDownloader
         private void frmDownloader_SizeChanged(object sender, EventArgs e)
         {
             this.lvMessage.Columns[1].Width = this.lvMessage.Width - this.initColumnWidthExludeMessage - 10;
+        }
+
+        private void tsmiPlay_Click(object sender, EventArgs e)
+        {
+            this.PlayVideo();
+        }
+
+        private void PlayVideo()
+        {
+            if (this.lvMessage.FocusedItem != null)
+            {
+                VideoInfo videoInfo = this.lvMessage.FocusedItem.Tag as VideoInfo;
+                if (videoInfo != null && videoInfo.TaskState == DownloadTaskState.Finished && File.Exists(videoInfo.LocalPath))
+                {
+                    Process.Start(videoInfo.LocalPath);
+                }
+            }
+        }
+
+        private void tsmiOpenExplorer_Click(object sender, EventArgs e)
+        {
+            this.OpenFileInExplorer();
+        }
+
+        private void OpenFileInExplorer()
+        {
+            if (this.lvMessage.FocusedItem != null)
+            {
+                VideoInfo videoInfo = this.lvMessage.FocusedItem.Tag as VideoInfo;
+                if (videoInfo != null && videoInfo.TaskState == DownloadTaskState.Finished && File.Exists(videoInfo.LocalPath))
+                {
+                    string cmd = "explorer.exe";
+                    string arg = "/select," + videoInfo.LocalPath;
+                    Process.Start(cmd, arg);
+                }
+            }
+        }
+
+        private void lvMessage_DoubleClick(object sender, EventArgs e)
+        {
+            this.PlayVideo();
+        }
+
+        private void lvMessage_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (this.lvMessage.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    VideoInfo videoInfo = this.lvMessage.FocusedItem.Tag as VideoInfo;
+
+                    this.contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
         }
     }
 }

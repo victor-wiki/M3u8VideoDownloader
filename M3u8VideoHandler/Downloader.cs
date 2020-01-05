@@ -587,10 +587,12 @@ namespace M3u8VideoHandler
 
             if (File.Exists(mergedVideoPath))
             {
-                info.TaskState = DownloadTaskState.Finished;
-                this.Feedback(info, "Finished", true);
+                info.TaskState = DownloadTaskState.Finished;               
+                info.LocalPath = saveFilePath;
 
                 File.Move(mergedVideoPath, saveFilePath);
+
+                this.Feedback(info, "Finished", true);
 
                 foreach (string videoPath in videoPaths)
                 {
@@ -648,6 +650,8 @@ namespace M3u8VideoHandler
                 if (info.TaskState == DownloadTaskState.Running)
                 {
                     info.TaskState = DownloadTaskState.Finished;
+                    info.LocalPath = saveFilePath;
+
                     this.Feedback(info, "Finished", true);
 
                     this.ClearTempFiles(subSaveFolder);
