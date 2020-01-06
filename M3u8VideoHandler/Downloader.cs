@@ -245,8 +245,18 @@ namespace M3u8VideoHandler
 
                 if (!File.Exists(newFilePath))
                 {
-                    this.Feedback(info, $"Download new file \"{flagFileExtension}\":{newFlagFileUrl}");
-                    this.webClient.DownloadFile(newFlagFileUrl, newFilePath);
+                    this.Feedback(info, $"Download new file:{newFlagFileUrl}");
+
+                    try
+                    {
+                        this.webClient.DownloadFile(newFlagFileUrl, newFilePath);
+                    }
+                    catch(Exception ex)
+                    {
+                        info.TaskState = DownloadTaskState.Error;
+                        this.Feedback(info, ex.Message, false, true);
+                        return;
+                    }
                 }
 
                 await this.DownloadTsFiles(info, fileName, newFilePath, true);
