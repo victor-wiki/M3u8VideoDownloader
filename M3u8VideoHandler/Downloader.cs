@@ -24,6 +24,7 @@ namespace M3u8VideoHandler
         private string tsDownloadedLogFileName = "TsDownloaded.txt";
         private int interlockedCount = 0;
         private string mergeToolFileName = "ffmpeg.exe";
+        private Regex errorRegex = new Regex("\\b(error|invalid)\\b");
         private string localM3u8FileName = "local.m3u8";
         private string m3u8LocalKeyFileName = "key.key";
         private List<WebClient> webclients = new List<WebClient>();
@@ -738,7 +739,8 @@ namespace M3u8VideoHandler
                             if (info != null)
                             {
                                 string msg = e.Data.ToLower();
-                                if (msg.Contains("invalid") || msg.Contains("error"))
+                                matches = errorRegex.Matches(msg);
+                                if (matches != null && matches.Count > 0)
                                 {
                                     process.Close();
                                     process.Dispose();
