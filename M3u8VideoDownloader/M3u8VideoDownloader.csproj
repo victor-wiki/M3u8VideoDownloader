@@ -147,8 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\folder.png" />
-    <Content Include="screenshort1.png" />
-    <Content Include="screenshort2.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\M3u8VideoHandler\M3u8VideoHandler.csproj">
