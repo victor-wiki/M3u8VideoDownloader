@@ -52,6 +52,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>video.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -147,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\folder.png" />
+    <Content Include="video.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\M3u8VideoHandler\M3u8VideoHandler.csproj">
